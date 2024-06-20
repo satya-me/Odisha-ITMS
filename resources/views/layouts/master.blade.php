@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="{{ asset('/') }}assets/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{ asset('/') }}assets/images/favicon.png" />
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 <body>
   <div class="container-scroller">
@@ -327,6 +328,8 @@
   <script src="{{ asset('/') }}assets/js/dashboard.js"></script>
   <script src="{{ asset('/') }}assets/js/Chart.roundedBarCharts.js"></script>
   <!-- End custom js for this page-->
+
+  @yield('js')
 </body>
 
 </html>
