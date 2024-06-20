@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Device</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container mt-5">
-    <h2>Create Device</h2>
+@extends('layouts.master')
+
+@section('title', 'add device')
+
+@section('css')
+<!-- You can add custom CSS for this specific page here -->
+@endsection
+
+@section('content')
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -23,7 +23,7 @@
         </div>
     @endif
 
-    <form action="{{ route('device_list_store') }}" method="POST">
+    {{-- <form action="{{ route('device_list_store') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="location_name">Location Name</label>
@@ -50,7 +50,44 @@
             <input type="date" class="form-control" id="expire_date" name="expire_date" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-</body>
-</html>
+    </form> --}}
+    <div class="row">
+        <div class="col-md-6 grid-margin transparent mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Add Device </h4>
+
+                    <form class="forms-sample"action="{{ route('device_list_store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="">Location Name</label>
+                            <input type="text" class="form-control" id="location_name" name="location_name" placeholder="Enter Location Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Street Name</label>
+                            <input type="text" class="form-control" id="street_name" name="street_name" placeholder="Enter Street Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Camera Type</label>
+                            <input type="text" class="form-control" id="camera_type" name="camera_type" placeholder="Enter Camera Type">
+                        </div>
+                        <div class="form-group">
+                            <label for="">MAC ID</label>
+                            <input type="text" class="form-control" id="mac_id" name="mac_id" placeholder="Enter MAC ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Installation Date</label>
+                            <input type="date" class="form-control" id="installation_date" name="installation_date">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Expire Date</label>
+                            <input type="date" class="form-control" id="expire_date" name="expire_date">
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
