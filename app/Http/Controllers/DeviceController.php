@@ -32,11 +32,6 @@ class DeviceController extends Controller
         return redirect()->route('device_list')->with('success', 'Device details saved successfully.');
     }
 
-    // public function edit_device()
-    // {
-    //     return view('device.create_new');
-    // }
-
     public function edit_device($id)
     {
         $device = Device_list::findOrFail($id);
@@ -59,8 +54,6 @@ class DeviceController extends Controller
 
         return redirect()->route('device_list')->with('success', 'Device updated successfully.');
     }
-
-
 
     public function device_report(){
         return view('device_report');
