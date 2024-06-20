@@ -32,6 +32,36 @@ class DeviceController extends Controller
         return redirect()->route('device_list')->with('success', 'Device details saved successfully.');
     }
 
+    // public function edit_device()
+    // {
+    //     return view('device.create_new');
+    // }
+
+    public function edit_device($id)
+    {
+        $device = Device_list::findOrFail($id);
+        return view('device.edit_device', compact('device'));
+    }
+
+    public function update_device(Request $request, $id)
+    {
+        $request->validate([
+            'location_name' => 'required|string|max:255',
+            'street_name' => 'required|string|max:255',
+            'camera_type' => 'required|string|max:255',
+            'mac_id' => 'required|string|max:255',
+            'installation_date' => 'required|date',
+            'expire_date' => 'required|date',
+        ]);
+
+        $device = Device_list::findOrFail($id);
+        $device->update($request->all());
+
+        return redirect()->route('device_list')->with('success', 'Device updated successfully.');
+    }
+
+
+
     public function device_report(){
         return view('device_report');
     }

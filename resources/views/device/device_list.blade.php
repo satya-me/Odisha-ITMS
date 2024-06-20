@@ -90,10 +90,11 @@
                                                         </button>
                                                     </li>
                                                     <li>
-                                                        <a href="" type="button" class="edit">
+                                                        <a href="{{ route('edit_device', $item->id) }}" type="button" class="edit">
                                                             Edit
                                                         </a>
                                                     </li>
+
                                                     <li>
                                                         <a href="devicereport.html" class="view">
                                                             View
