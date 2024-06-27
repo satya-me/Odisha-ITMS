@@ -34,4 +34,6 @@ Route::middleware('auth')->group(function () {
 
     // Device report
     Route::get('/device_report', [DeviceController::class, 'device_report'])->name('device_report');
+
+    Route::get('/setting', [DeviceController::class, 'Setting'])->name('setting');
 });

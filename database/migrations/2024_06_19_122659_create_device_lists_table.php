@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('installation_date');
             $table->date('expire_date');
             $table->boolean('online_status')->nullable()->default(null);
+            $table->integer('api_calling_count')->nullable()->default(0);
             $table->timestamps();
         });
     }

@@ -9,7 +9,7 @@ class Device_list extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'location_name', 'street_name', 'camera_type', 'mac_id', 'installation_date', 'expire_date', 'online_status'
+        'location_name', 'street_name', 'camera_type', 'mac_id', 'installation_date', 'expire_date', 'online_status', 'api_calling_count'
     ];
 
     protected static function boot()

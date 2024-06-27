@@ -1,13 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Device_list;
+use App\Models\Device_report;
+use App\Models\Vids;
 use Illuminate\Http\Request;
 
 class DeviceController extends Controller
 {
-    public function device_list(){
-        $device_data=Device_list::get();
+    public function device_list()
+    {
+        $device_data = Device_list::get();
         return view('device.device_list', compact('device_data'));
     }
 
@@ -55,7 +59,14 @@ class DeviceController extends Controller
         return redirect()->route('device_list')->with('success', 'Device updated successfully.');
     }
 
-    public function device_report(){
-        return view('device_report');
+    public function device_report()
+    {
+        $Device_report = Vids::get();
+        return view('device_report', compact('Device_report'));
+    }
+    public function Setting()
+    {
+        $Device_report = Vids::get();
+        return view('device.setting', compact('Device_report'));
     }
 }

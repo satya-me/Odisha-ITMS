@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Odisha ITMS</title>
+    <title>Odisha_ITMS</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('/') }}assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="{{ asset('/') }}assets/vendors/ti-icons/css/themify-icons.css">
@@ -52,7 +52,10 @@
                                 <i class="ti-settings text-primary"></i>
                                 Settings
                             </a>
-
+                            {{-- <a class="dropdown-item">
+                    <i class="ti-power-off text-primary"></i>
+                    Logout
+                </a> --}}
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -65,7 +68,11 @@
                             </form>
                         </div>
                     </li>
-
+                    <!-- <li class="nav-item nav-settings d-none d-lg-flex">
+            <a class="nav-link" href="#">
+              <i class="icon-ellipsis"></i>
+            </a>
+          </li> -->
                 </ul>
                 <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
                     data-toggle="offcanvas">
@@ -94,7 +101,8 @@
                         <div class="add-items d-flex px-3 mb-0">
                             <form class="form w-100">
                                 <div class="form-group d-flex">
-                                    <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                                    <input type="text" class="form-control todo-list-input"
+                                        placeholder="Add To-do">
                                     <button type="submit" class="add btn btn-primary todo-list-add-btn"
                                         id="add-task">Add</button>
                                 </div>
@@ -259,12 +267,6 @@
                         <a class="nav-link" href="{{ route('device_report') }}">
                             <i class="icon-paper menu-icon"></i>
                             <span class="menu-title">Device report</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('setting') }}">
-                            <i class="icon-paper menu-icon"></i>
-                            <span class="menu-title">Setting</span>
                         </a>
                     </li>
 
