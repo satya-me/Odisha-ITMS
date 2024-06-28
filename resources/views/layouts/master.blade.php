@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Odisha ITMS</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="shortcut icon" href="{{ asset('/') }}/favicon.ico" type="image/x-icon">
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('/') }}assets/vendors/feather/feather.css">
     <link rel="stylesheet" href="{{ asset('/') }}assets/vendors/ti-icons/css/themify-icons.css">
@@ -21,9 +24,24 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('/') }}assets/images/favicon.png" />
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('/') }}assets/flash/flash.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
+    <script src="{{ asset('/') }}assets/flash/flash.js"></script>
+    <script>
+        const toasts = new Toasts({
+            width: 300,
+            timing: 'ease',
+            duration: '.5s',
+            dimOld: false,
+            position: 'top-right' // top-left | top-center | top-right | bottom-left | bottom-center | bottom-right
+        });
+    </script>
+
+
     <div class="container-scroller">
         <!-- partial:partials/_navbar.html -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -94,7 +112,8 @@
                         <div class="add-items d-flex px-3 mb-0">
                             <form class="form w-100">
                                 <div class="form-group d-flex">
-                                    <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                                    <input type="text" class="form-control todo-list-input"
+                                        placeholder="Add To-do">
                                     <button type="submit" class="add btn btn-primary todo-list-add-btn"
                                         id="add-task">Add</button>
                                 </div>
@@ -317,6 +336,7 @@
     <script src="{{ asset('/') }}assets/js/dashboard.js"></script>
     <script src="{{ asset('/') }}assets/js/Chart.roundedBarCharts.js"></script>
     <!-- End custom js for this page-->
+
 
     @yield('js')
 </body>

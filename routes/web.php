@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EnvController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DeviceController;
 
@@ -35,5 +36,9 @@ Route::middleware('auth')->group(function () {
     // Device report
     Route::get('/device_report', [DeviceController::class, 'device_report'])->name('device_report');
 
+
+    // ------------------------------------------------------------------------------------------------------------
     Route::get('/setting', [DeviceController::class, 'Setting'])->name('setting');
 });
+Route::post('/update-token', [EnvController::class, 'PLATE_API_TOKEN'])->name('update-token');
+Route::post('/update-token-status', [EnvController::class, 'PLATE_API_STATUS'])->name('update-token-status');

@@ -19,7 +19,8 @@ class PlateRecognizerController extends Controller
         }
         // Define API endpoint and authorization token
         $apiUrl = 'https://api.platerecognizer.com/v1/plate-reader/';
-        $authorizationToken = 'Token 07fe3399b51d3706d9cb1e85cdff00589da82ab4';
+        // 07fe3399b51d3706d9cb1e85cdff00589da82ab4
+        $authorizationToken = 'Token' . env('PLATE_API_TOKEN');
 
         // Initialize CURL
         $curl = curl_init();

@@ -51,7 +51,7 @@
                         <h4 class="card-title">Device List</h4>
 
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table table-hover table-bordered">
                                 <thead>
                                     <tr>
                                         <th>Location Name</th>
@@ -60,7 +60,7 @@
                                         <th>MAC ID</th>
                                         <th>Online Status</th>
                                         <th>Installation Date</th>
-                                        <th>API Calls Counts</th>
+                                        <th>API Counts</th>
                                         <th>Expire Date</th>
                                         <th>Action</th>
                                     </tr>
@@ -87,16 +87,17 @@
                                                                 type="button" data-toggle="dropdown" aria-haspopup="true"
                                                                 aria-expanded="false">Dropdown</button>
                                                             <div class="dropdown-menu" style="">
-                                                                <a class="dropdown-item" href="#">Action</a>
-                                                                <a class="dropdown-item" href="#">Another action</a>
-                                                                <a class="dropdown-item" href="#">Something else
-                                                                    here</a>
-                                                                <div role="separator" class="dropdown-divider"></div>
-                                                                <a class="dropdown-item" href="#">Separated link</a>
+                                                                <a class="dropdown-item" type="button"
+                                                                    href="#">ON/OFF</a>
+                                                                <a class="dropdown-item edit" type="button"
+                                                                    href="{{ route('edit_device', $item->id) }}">Edit</a>
+                                                                <a class="dropdown-item view" type="button"
+                                                                    href="#">View</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </td>
 
                                         </tr>

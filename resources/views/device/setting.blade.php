@@ -10,55 +10,181 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Basic form elements</h4>
-                <p class="card-description">
-                    Basic form elements
-                </p>
-                <form class="forms-sample">
-                    <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
-                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword4">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleSelectGender">Gender</label>
-                        <select class="form-control" id="exampleSelectGender">
-                            <option>Male</option>
-                            <option>Female</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" name="img[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                            <span class="input-group-append">
-                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                            </span>
+                <h4 class="card-title">General Setting</h4>
+                <form class="form-sample">
+                    <p class="card-description text-white bg-primary pl-1">Plate Recognizer</p>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">API Token:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="PLATE_API_TOKEN" name="PLATE_API_TOKEN"
+                                        value="{{ env('PLATE_API_TOKEN') }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">API</label>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input PLATE_API_STATUS"
+                                                name="PLATE_API_STATUS" id="PLATE_API_STATUS1" value="Enable"
+                                                {{ env('PLATE_API_STATUS') == 'Enable' ? 'checked' : '' }}>
+                                            Enable
+                                            <i class="input-helper"></i></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input PLATE_API_STATUS"
+                                                name="PLATE_API_STATUS" id="PLATE_API_STATUS2" value="Disable"
+                                                {{ env('PLATE_API_STATUS') == 'Disable' ? 'checked' : '' }}>
+                                            Disable
+                                            <i class="input-helper"></i></label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputCity1">City</label>
-                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+
+                    <p class="card-description text-white bg-dark pl-1">Address</p>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Address 1</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">State</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleTextarea1">Textarea</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4"></textarea>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Address 2</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Postcode</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">City</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Country</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control">
+                                        <option>America</option>
+                                        <option>Italy</option>
+                                        <option>Russia</option>
+                                        <option>Britain</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+
 @endsection
 
 @section('js')
+    <script>
+        $(document).ready(function() {
+            $('#PLATE_API_TOKEN').on('change', function() {
+                const token = $(this).val();
+
+                $.ajax({
+                    url: "{{ route('update-token') }}",
+                    type: 'POST',
+                    data: {
+                        PLATE_API_TOKEN: token
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+
+                        // alert(response.message);
+                        toasts.push({
+                            title: 'Success',
+                            content: response.message,
+                            style: 'success'
+                        });
+                    },
+                    error: function(response) {
+                        // alert('Failed to update token');
+                        toasts.push({
+                            title: 'Error',
+                            content: 'Failed to update token',
+                            style: 'error'
+                        });
+                    }
+                });
+            });
+
+            $('.PLATE_API_STATUS').on('change', function() {
+                const token = $(this).val();
+
+                $.ajax({
+                    url: "{{ route('update-token-status') }}",
+                    type: 'POST',
+                    data: {
+                        PLATE_API_STATUS: token
+                    },
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(response) {
+
+                        // alert(response.message);
+                        toasts.push({
+                            title: 'Success Toast',
+                            content: response.message,
+                            style: 'success'
+                        });
+                    },
+                    error: function(response) {
+                        // alert('Failed to update token');
+                        toasts.push({
+                            title: 'Error Toast',
+                            content: 'Failed to update token',
+                            style: 'error'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

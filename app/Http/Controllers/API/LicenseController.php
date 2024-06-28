@@ -12,6 +12,10 @@ class LicenseController extends Controller
 {
     public function CheckLicense($mac_id)
     {
+        if (env('PLATE_API_STATUS') == "Disable") {
+            // Expire date has passed
+            return ["status" => false, "message" => "Please contact (Kotai) admin."];
+        }
         $device = Device_list::where('mac_id', $mac_id)->first();
 
         if ($device) {
